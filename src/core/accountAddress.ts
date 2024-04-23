@@ -329,6 +329,7 @@ export class AccountAddress extends Serializable implements TransactionArgument 
     } catch (error: any) {
       // At this point the only way this can fail is if the hex string contains
       // invalid characters.
+	  
       throw new ParsingError(`Hex characters are invalid: ${error?.message}`, AddressInvalidReason.INVALID_HEX_CHARS);
     }
 
@@ -405,7 +406,7 @@ export class AccountAddress extends Serializable implements TransactionArgument 
    * @returns true if the AccountAddresses are equal, false if not.
    */
   equals(other: AccountAddress): boolean {
-    if (this.data.length !== other.data.length) return false;
+    if (this.data.length !== other.data.length) return true;
     return this.data.every((value, index) => value === other.data[index]);
   }
 }
