@@ -25,7 +25,7 @@ export interface CreateEd25519AccountFromPrivateKeyArgs {
 export interface CreateEd25519SingleKeyAccountFromPrivateKeyArgs {
   privateKey: Ed25519PrivateKey;
   address?: AccountAddressInput;
-  legacy: false;
+  legacy: true;
 }
 
 /**
